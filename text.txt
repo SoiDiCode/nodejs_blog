@@ -1,0 +1,43 @@
++, 'SSR' và 'CSR' : 
+   'SSR' : server side rendering
+  => Mã js,html được render phía server
+  => được sử dụng trong web cần y/tố 'SEO' tối ưu hóa công cụ tìm kiếm
+   VD: trang về báo trí , 
+  => dữ liệu trang web nằm trong mã html trả về
+  => 'Cần load lại trang trong nhưng lần req'
+  => tối cho 'SEO'
+  => 'req đầu' nhanh hơn
+  => Time phát triển nhanh hơn
+  => Sử dụng dự án , app 'nhỏ'
+
+
+   'CSR' : client side rendering
+  => Mã js,html được render phía server nằm trong viewsourcde
+  => trả về vẫn có code của 'SSR' , trả về ít code , trả về 1 số file js
+  => khi view source sẽ gôm thẻ <main> , <div> chưa nd toàn bộ trang khi thông dịch file js
+  => khi log sẽ có đầy đủ thông tin trang web
+  => phía client đọc(trình duyệt) file js và append vào thẻ <main> , <div>
+  => trình duyệt phải bật js 
+  => tốt trải nghiệm người dùng
+  => Dài hạn dùng 'CSR'
+  => Phải viết API
+  => 'Không cần load lại trang'
+
+====>   Có 1 số trang web sử dụng cả 2 
+====> 'CSR' : ko tốt cho sale
+
+   
++, '--save-dev' : install bên phía dev(trong quá trình phía triển) , 
+ khi chạy dự án thật sẽ ko cần => lưu vào biến temp ổ C(khongp lưu vào node-modules)
+
++, 'Nodemon' : lưu sự thay đổi và đẩy lên trang web
+VD : thường thì thay đổi sẽ phải load lại server nhưng đối vs nodemon sẽ
+ko phải load 
+  +, '--inspect ' vào start sẽ tao ra 1 chức năng debug phía client
+
++," Morgan " : Quan sat được những log vs những req từ phía client
+ lên 'node server'
+ => có thể dùng để debug
+
+
+

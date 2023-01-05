@@ -1,6 +1,11 @@
-var express = require('express');
-var app = express();
-var port = 3000
+const express = require('express');
+const morgan = require('morgan');
+const app = express();
+const port = 3000
+
+// logger tiêu chuẩn(có nhiều loại logger)
+app.use(morgan('combined'));
+
 
 // đây là 1 router : gồm trang điều hướng , req và res
 // chú ý : dấu => around funtion còn ko có  là function
