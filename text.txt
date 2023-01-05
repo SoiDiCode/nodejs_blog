@@ -39,5 +39,9 @@ ko phải load
  lên 'node server'
  => có thể dùng để debug
 
++, Temple engines(handlebars) : viết ra những file chứa mã htmlgọn hơn,
+  chia layout, 
+
+
 
 
