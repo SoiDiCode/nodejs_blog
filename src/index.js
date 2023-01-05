@@ -5,6 +5,12 @@ const path = require('path');
 const app = express();
 const port = 3000
 
+
+// cấu hình sử dụng file tĩnh
+// kiểm tra những path cấu hình static
+app.use(express.static(path.join(__dirname, 'public')));
+
+
 // cấu hình lại đuôi file handlebars : .handlebars => any
 var config = {
     extname: '.hbs'

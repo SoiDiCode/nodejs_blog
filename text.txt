@@ -42,6 +42,22 @@ ko phải load
 +, Temple engines(handlebars) : viết ra những file chứa mã htmlgọn hơn,
   chia layout, 
 
++, Config to use static files (files tĩnh) => files css , images
+
+
++, Config to use SASS => file .scss
+// không viết code vào file.css => file.scss
+// brower ko đọc files .scss 
+// =>  file.scss complie file.css trong public (thư mục tĩnh)
+// ==> Config thành 1 cmd để khi run server sẽ lắng nghe và complie
+// cấu hình 1 : node-sass [options] <input> [output] 
+// cấu hình 2 : cat <input> | node-sass > output
+   +, input : file.scss
+   +, output : file.css
+   +, options : chế độ tùy chọn
+
+   // có thể cofig lại những file có đuôi muốn nodemon lắng nghe
+
 
 
 

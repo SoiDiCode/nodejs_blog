@@ -1,0 +1,9 @@
+// lấy những đối tượng đã được khai báo bên variable
+// khi import chỉ cần lấy ten bỏ dấu '-'
+@import 'variable';
+
+// dùng dấu $ để lấy dữ liệu từ thư viện import
+h1 {
+    color: $red-color;
+    font-size: $font;
+}
