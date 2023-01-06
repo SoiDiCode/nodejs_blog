@@ -1,1 +1,12 @@
-<h2> Đây là trang web</h2>
+<div class="mt-4">
+    {{!-- method : pthuc nào , action : submit ở đâu(URL nào)
+    nếu để trông hoặc mặc định => đẩy ra chính URL chứa form --}}
+    <form method="get" action="/tin-tuc">
+        <div class="form-group">
+            <label for="search-input">Email address</label>
+            <input type="text" class="form-control" id="search-input" name="searchs" placeholder="Enter words .... ">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+    </form>
+</div>

@@ -48,7 +48,12 @@ app.get("/tin-tuc", (req, res) => res.render("news"));
 
 // để lấy parameterquery thì gọi qua hàm query
 app.get("/search", (req, res) => {
-    console.log(req.query.author);
+
+    res.render("search")
+});
+
+app.post("/search", (req, res) => {
+
     res.render("search")
 });
 

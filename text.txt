@@ -71,6 +71,11 @@ ko phải load
  VD : search?q=f8laptrinh&ref=f8&author=s
   Tồn tại trong tất cả các method
   thường sử dụng với method : 'GET'
+
+  +, 'Default behavior of HTML forms' : hành vi mặc định của form
+
+  chú ý khi submit nếu method = 'post' thì reload lại vẫn là post 
+  => đổi gọi lại uRL => 'GET'
      
 
   
