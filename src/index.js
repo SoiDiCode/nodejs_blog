@@ -2,6 +2,9 @@ const express = require('express');
 const morgan = require('morgan');
 const handlebars = require('express-handlebars');
 const path = require('path');
+// const controller = require('./app/controllers');
+// khai báo , lấy dữ liệu từ folder 'routes'
+const routes = require('./routes');
 const app = express();
 const port = 3000
 
@@ -53,24 +56,34 @@ app.set('views', path.join(__dirname, 'resources/views'));
 //             "hello mọi người"
 //         ));
 
-app.get("/trang-chu", (req, res) => res.render("home"));
+// 
 
-app.get("/tin-tuc", (req, res) => res.render("news"));
+
+// chạy routes gọi đến fuction router trong 'routes/index.js'
+routes(app);
+
+
+
+// Qua router -> Action(/path) ->(được đọc bởi) Dispathcher (điều phối) 
+//--> Function handler(được chạy)(Controller) --> tương tác vs view
+// app.get("/trang-chu", (req, res) => res.render("home"));
+
+// app.get("/news", controller.index(req, res));
 
 // để lấy parameterquery thì gọi qua hàm query
-app.get("/search", (req, res) => {
+// app.get("/search", (req, res) => {
 
-    res.render("search")
-});
+//     res.render("search")
+// });
 
 // khi post sẽ chưa có dữ liệu log ra 
 //  brower => controller sẽ đi qua middleware
 // express chưa xử lý được dữ liệu từ method post để lưu vào body => undefined
 // còn đối với get thì đã đc xử lí thông qua middleware nên query => get data => có dữ liệu
-app.post("/search", (req, res) => {
-    console.log(req.body); // ==> undifined
-    res.send("Chuyển trang thành công !")
-});
+// app.post("/search", (req, res) => {
+//     console.log(req.body); // ==> undifined
+//     res.send("Chuyển trang thành công !")
+// });
 
 
 app.listen(port, () => {
