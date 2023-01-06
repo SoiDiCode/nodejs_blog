@@ -85,6 +85,15 @@ ko phải load
     => dữ liệu thông tin client chứa trong đt "FORM DATA"
     => lấy qua pp 'req.body'
 
+ +, 'MVC' : Mô hình MVC 
+   'M' : Model (tương tác với datasource , resource ,  )
+   'V' : View (Chứa file views (html , css))
+   'C' : Controller (Trung chuyển giữa model vs view)
+   ==> Giúp quản lý project
+   ==> Tách ra các thành phần
+   quá trình từ client --> server : " Brower -> Web Server -> Router -> Dispatcher -> Controller(xử lý model vs view)-> WenServer -> Brower"
+
+
 
      
 
