@@ -58,7 +58,7 @@ ko phải load
 
    // có thể cofig lại những file có đuôi muốn nodemon lắng nghe
 
-+, Basic routing : định nghĩa router có thể truy cập vào website(get,put,post,delete)
++, 'Basic routing' : định nghĩa router có thể truy cập vào website(get,put,post,delete)
   Brower mapping vs router khi client serach trên thanh công cụ
     URL tồn tại duy nhất => URI(Path) , 
     Domain : điểm cuối của URI
@@ -66,6 +66,11 @@ ko phải load
     1 router có thể có 1 hoặc nhiều funtion để sử lí và đc thực thi khi
      router được gọi đến
       Config : app.METHOD(PATH , HANDLER)
+
++, 'Query parameters' : các parameter truyền vào sau url và trả về phía server
+ VD : search?q=f8laptrinh&ref=f8&author=s
+  Tồn tại trong tất cả các method
+  thường sử dụng với method : 'GET'
      
 
   

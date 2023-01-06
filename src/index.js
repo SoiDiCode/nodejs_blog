@@ -46,7 +46,11 @@ app.get("/trang-chu", (req, res) => res.render("home"));
 
 app.get("/tin-tuc", (req, res) => res.render("news"));
 
-
+// để lấy parameterquery thì gọi qua hàm query
+app.get("/search", (req, res) => {
+    console.log(req.query.author);
+    res.render("search")
+});
 
 
 app.listen(port, () => {
