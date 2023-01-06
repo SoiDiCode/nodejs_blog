@@ -58,6 +58,18 @@ ko phải load
 
    // có thể cofig lại những file có đuôi muốn nodemon lắng nghe
 
++, Basic routing : định nghĩa router có thể truy cập vào website(get,put,post,delete)
+  Brower mapping vs router khi client serach trên thanh công cụ
+    URL tồn tại duy nhất => URI(Path) , 
+    Domain : điểm cuối của URI
+    URI sẽ sử dụng phương thức của giao thức HTTP
+    1 router có thể có 1 hoặc nhiều funtion để sử lí và đc thực thi khi
+     router được gọi đến
+      Config : app.METHOD(PATH , HANDLER)
+     
 
+  
+
+ 
 
 
