@@ -5,11 +5,22 @@ const path = require('path');
 const app = express();
 const port = 3000
 
-
+// Khi muốn sử dung method / thư viện nào trong express => sử dụng từ khóa 'use'
 // cấu hình sử dụng file tĩnh
 // kiểm tra những path cấu hình static
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+// từ 4.16 , body-parser đã đc tích hợp vào express còn dưới phải install body-parser npm => dử dụng qs npm để parser : Object
+// middleware để sử lí dữ liệu từ form (post) => body
+// sử dụng form để submit
+app.use(express.urlencoded({
+    extended: true
+}));
+
+// 1 số dụng thư viện để submit or code js để submit
+// VD : XMLHttprequest , fetch , axios , ajax
+app.use(express.json())
 
 // cấu hình lại đuôi file handlebars : .handlebars => any
 var config = {
@@ -52,9 +63,13 @@ app.get("/search", (req, res) => {
     res.render("search")
 });
 
+// khi post sẽ chưa có dữ liệu log ra 
+//  brower => controller sẽ đi qua middleware
+// express chưa xử lý được dữ liệu từ method post để lưu vào body => undefined
+// còn đối với get thì đã đc xử lí thông qua middleware nên query => get data => có dữ liệu
 app.post("/search", (req, res) => {
-
-    res.render("search")
+    console.log(req.body); // ==> undifined
+    res.send("Chuyển trang thành công !")
 });
 
 

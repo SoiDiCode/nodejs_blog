@@ -76,6 +76,16 @@ ko phải load
 
   chú ý khi submit nếu method = 'post' thì reload lại vẫn là post 
   => đổi gọi lại uRL => 'GET'
+  => dữ liệu thông tin client chứa trong đt "Query"
+  => submit qua pp 'req.query'
+
+
+  +, "POST METHOD" : gửi dữ liệu thì client -> server
+    tránh lộ những dữ liệu thông tin người dùng
+    => dữ liệu thông tin client chứa trong đt "FORM DATA"
+    => lấy qua pp 'req.body'
+
+
      
 
   
