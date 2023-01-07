@@ -5,8 +5,8 @@ const router = express.Router();
 const controller = require('../app/controllers/NewsControllers');
 
 // luôn khớp từ trên xuống
-router.use('/chi-tiet', controller.detail);
-router.use('/', controller.index);
+router.get('/chi-tiet', controller.detail);
+router.get('/', controller.index);
 
 // router.use("/chi-tiet", controller.chitiet);
 module.exports = router;

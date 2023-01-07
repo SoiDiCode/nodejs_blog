@@ -108,7 +108,9 @@ ko phải load
  ==> Khi chạy 'npm run beautiful' => chạy "lint-staged " => tìm đến "lint - staged " để chạy 
   chú ý : lint - staged khi đc 'git add ' thì ms bắt đầu đầu chạy 'npm để fomat rồi commit'
   +, 'Husky' : sẽ tự động chạy prettier và 'lint-staged ' khi 'commit code'
-
+ 
++, Cài đặt 'JSON viewer' giúp nhìn dữ liệu trên CHrom rõ ràng hơn
+ 
        
 
   

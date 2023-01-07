@@ -42,7 +42,7 @@ app.engine('hbs', handlebars.engine(config));
 app.set('view engine', 'hbs');
 // chỉ lại đường dẫn
 // nếu lỗi đổi dấu \\
-app.set('views', path.join(__dirname, 'resources/views'));
+app.set('views', path.join(__dirname, 'resources','views'));
 
 // console.log('Path', __dirname);//=> lấy ra đường dẫn chạy index.js( D:\NodeJS\F8_NodeJS\demo_nodemon\src)
 // console.log('Path', path.join(__dirname, 'resource/views'));
