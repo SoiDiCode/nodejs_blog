@@ -6,40 +6,40 @@ const path = require('path');
 // khai báo , lấy dữ liệu từ folder 'routes'
 const routes = require('./routes');
 const app = express();
-const port = 3000
+const port = 3000;
 
 // Khi muốn sử dung method / thư viện nào trong express => sử dụng từ khóa 'use'
 // cấu hình sử dụng file tĩnh
 // kiểm tra những path cấu hình static
 app.use(express.static(path.join(__dirname, 'public')));
 
-
 // từ 4.16 , body-parser đã đc tích hợp vào express còn dưới phải install body-parser npm => dử dụng qs npm để parser : Object
 // middleware để sử lí dữ liệu từ form (post) => body
 // sử dụng form để submit
-app.use(express.urlencoded({
-    extended: true
-}));
+app.use(
+    express.urlencoded({
+        extended: true,
+    }),
+);
 
 // 1 số dụng thư viện để submit or code js để submit
 // VD : XMLHttprequest , fetch , axios , ajax
-app.use(express.json())
+app.use(express.json());
 
 // cấu hình lại đuôi file handlebars : .handlebars => any
 var config = {
-    extname: '.hbs'
-}
+    extname: '.hbs',
+};
 
 // logger tiêu chuẩn(có nhiều loại logger)
 // HTTP Logger
 app.use(morgan('combined'));
 
-
 //Temple engines
 // định nghĩa handlebars = ()
 app.engine('hbs', handlebars.engine(config));
 // ứng dụng express(app) sử dụng view engine là handlebars
-app.set('view engine', 'hbs')
+app.set('view engine', 'hbs');
 // chỉ lại đường dẫn
 // nếu lỗi đổi dấu \\
 app.set('views', path.join(__dirname, 'resources/views'));
@@ -56,15 +56,10 @@ app.set('views', path.join(__dirname, 'resources/views'));
 //             "hello mọi người"
 //         ));
 
-// 
-
-
+//
 // chạy routes gọi đến fuction router trong 'routes/index.js'
-routes(app);
-
-
-
-// Qua router -> Action(/path) ->(được đọc bởi) Dispathcher (điều phối) 
+routes(      app);
+// Qua router -> Action(/path) ->(được đọc bởi) Dispathcher (điều phối)
 //--> Function handler(được chạy)(Controller) --> tương tác vs view
 // app.get("/trang-chu", (req, res) => res.render("home"));
 
@@ -76,7 +71,7 @@ routes(app);
 //     res.render("search")
 // });
 
-// khi post sẽ chưa có dữ liệu log ra 
+// khi post sẽ chưa có dữ liệu log ra
 //  brower => controller sẽ đi qua middleware
 // express chưa xử lý được dữ liệu từ method post để lưu vào body => undefined
 // còn đối với get thì đã đc xử lí thông qua middleware nên query => get data => có dữ liệu
@@ -85,7 +80,6 @@ routes(app);
 //     res.send("Chuyển trang thành công !")
 // });
 
-
 app.listen(port, () => {
-    console.log(`App is running with port is ${port}`)
-})
+    console.log(`App is running with port is ${port}`);
+});

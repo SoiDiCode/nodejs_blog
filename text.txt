@@ -103,6 +103,13 @@ ko phải load
       => new.js
       => controller
 
++, 'Prettier ' : Giúp format code (có thể dùng save formatt trong VS code),
+ +'lint -staged + husky' : giúp format code trc khi commit
+ ==> Khi chạy 'npm run beautiful' => chạy "lint-staged " => tìm đến "lint - staged " để chạy 
+  chú ý : lint - staged khi đc 'git add ' thì ms bắt đầu đầu chạy 'npm để fomat rồi commit'
+  +, 'Husky' : sẽ tự động chạy prettier và 'lint-staged ' khi 'commit code'
+
+       
 
   
 
