@@ -1,1 +1,108 @@
-<h1>HOME PAGES</h1>
+
+{{!-- lấy đối tượng 'title' truyền vào bên index, phía server --}}
+<h1>{{title}}</h1>
+
+<h1>{{courses}}</h1>
+
+<ul class="people_list">
+    {{!-- this thể hiện cho 1 đối tượng trong people_list --}}
+    {{#each people}}
+    <li>{{this}}</li>
+    {{/each}}
+</ul>
+{{! handlesbar từ 4.6 trở nên sẽ ko truy cập được trực tiếp vào thuộc tính đối tượng}}
+ {{!-- Cách xử lí :
+  handlesbar bản 4.6 xuống
+  hoặc là thêm handlesbar bản thấp vào môi trương dev để ghi đè lên depenci --}}
+  
+
+<div class="mt-4">
+    <div class="row">
+         {{#each courses}}
+        <div class="col-sm-6 col-lg-4">
+     <div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{this.}}</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+
+<h1>DEMO MODAL</h1>
+<br> <br>
+
+<!-- Button trigger modal -->
+{{!-- <button> sẽ chỉ đến data-target lấy id của log confirm --}}
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#showModal">
+  Launch demo modal
+</button>
+<!-- Modal -->
+<div class="modal" tabindex="-1" role="dialog" id="showModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Xóa khóa học ?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Bạn chắc chắn muốn xóa chứ ?</p>
+      </div>
+      <div class="modal-footer">
+        {{! đóng modal qua  data-dismiss}}
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+        {{! lấy dữ liệu từ data-id và lấy dữ liệu bằng js}}
+        <button type="button" class="btn btn-danger" data-id="" id="btn-delete">Xóa</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  Tạo 1 form ẩn để submit dữ liệu xuống data để ddayrr xuống service
+  <form name="delete-forms" action="" method="post"></form>
+<script>
+  // Err : $ is defined dưới log vì chưa khi chạy thì chưa đc nạp tới 
+  // ==> Thêm vào 'DOMContentLoad'
+  document.addEventListener('DOMContentLoaded',function(){
+         var id_data;
+         // lấy ra form
+         var deleteForm = document.forms['delete-form'];
+    // khi DOM load xong thì ms chạy sự kiện callback
+    $('#exampleModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget); 
+     id_data = button.data('id');
+   
+});
+// Lấy ra nút xóa
+ var btnDelete =  document.getElementById('btn-delete');
+   console.log(btnDelete);
+   btnDelete.onclick = function () {
+    // thông báo ra id muốn xóa lấy từ modal
+          // set lại attribute của form
+          deleteForm.action = "/abc/" + id_data +"?method=Delete";
+         // submit form xuống server
+          deleteForm.submit();
+   }
+  });
+
+  // #exampleModal là id của modal 
+  // Khi được modal được bật thì modal sẽ lắng nghe
+  // phải import jquery để sử dụng dấu ($)
+  // check có jquery : viết dấu '$' => f() còn chưa thì có mỗi 'f'  dưới console.log
+  //$('#exampleModal').on('show.bs.modal', function (event) {
+  //var button = $(event.relatedTarget) ;
+  // lấy ra dữ liệu của id trong data-id
+ // var id = button.data('id') ;
+  // console.log('id')
+ // modal.find('.modal-title').text('New message to ' + recipient)
+ // modal.find('.modal-body input').val(recipient)
+//});
+
+</script>

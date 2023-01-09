@@ -110,7 +110,9 @@ ko phải load
   +, 'Husky' : sẽ tự động chạy prettier và 'lint-staged ' khi 'commit code'
  
 +, Cài đặt 'JSON viewer' giúp nhìn dữ liệu trên CHrom rõ ràng hơn
- 
++, Override method : Ghi đè lại phương thức submit
+  VD : hhh.com/cources/:id?method="PUT,Delete"
++, nếu muốn điều hướng lại trang trc : res.redrect('back');
        
 
   
