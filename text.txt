@@ -113,8 +113,22 @@ ko phải load
 +, Override method : Ghi đè lại phương thức submit
   VD : hhh.com/cources/:id?method="PUT,Delete"
 +, nếu muốn điều hướng lại trang trc : res.redrect('back');
-       
+  
++, 'SOFT DELETE' : Xóa mềm , kĩ thuật xóa mềm
+  +, Xóa mềm : ko xóa thật , Xóa trên giao diện nhưng vẫn còn trong database
+  +, Áp dụng chung , ==> Xử lí vs chức năng khôi phục , thùng rác
 
+  +, Liên quan đến : Cần đối soát
+  +, Cần truy viết
+  +, Cần truy viết
+  +, Liên quan đến đơn hàng , tiền tệ , dữ liệu nhạy cảm
+  # ==> tạo thêm 1 trường rồi find theo trường
+  # ==> chính là update
+
+   Để tạo ra được chức năng soft delete :
+    +, Delete(soft)
+    +, Restore
+    +, Force delete
   
 
  
